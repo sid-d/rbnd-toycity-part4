@@ -1,0 +1,69 @@
+require_relative 'find_by'
+require_relative 'errors'
+require 'csv'
+
+class Udacidata
+  	# Your code goes here!
+  	@@data_path = File.dirname(__FILE__) + "/../data/data.csv"
+  	def self.create(opts = {})
+  	# If the object's data is already in the database
+  	# create the object
+  	# return the object
+
+  	# If the object's data is not in the database
+  	# create the object
+  	# save the data in the database
+  	# return the object
+  		add_product = self.new(opts)
+  		CSV.open(@@data_path, "a+") do |csv|
+    		csv << [add_product.id,add_product.brand,add_product.name,add_product.price]
+  		end
+  		return add_product
+  	end 
+
+  	def self.all
+    	products=[]
+    	CSV.read(@@data_path, headers:true).each do |product| #read the CSV and iterate over each row
+      	#create a new instance of Product and add it to the products array.
+      	products << self.new(id: product["id"], brand: product["brand"], name: product["product"], price: product["price"])
+    	end
+    	#return the array of products.
+    	products
+  	end
+
+  	def self.first(n=1)
+  		if n==1
+  			all.first
+  		else
+  			all.first(n)
+  		end
+  	end
+
+   	def self.last(n=1)
+  		if n==1
+  			all.last
+  		else
+  			all.last(n)
+  		end
+   	end
+
+   	def self.find(n)
+   		all.each do |product|
+   			return product if product.id == n
+   		end
+   	end
+
+	def self.destroy(n)
+   		save_product = find(n)
+   		all_data = CSV.table(@@data_path, headers:true)
+      	all_data.delete_if do |product|
+        	product[:id] == n
+      	end
+
+    	File.open(@@data_path, "w") do |f|
+        	f.write(all_data.to_csv)
+    	end
+
+		return save_product
+	end
+end

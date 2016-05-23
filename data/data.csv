@@ -1,0 +1,106 @@
+id,brand,product,price
+1,Crayola,house,14.50
+2,Fisher-Price,crayons,2.00
+3,Fisher-Price,crayons,14.50
+4,Lego,kitchen,19.99
+5,Crayola,kitchen,99.99
+6,Crayola,crayons,14.50
+7,Crayola,kitchen,99.99
+8,Lego,video game,14.50
+9,Fisher-Price,kitchen,14.50
+10,Hasbro,kitchen,14.50
+11,Nintendo,kitchen,99.99
+12,Lego,house,2.00
+13,Nintendo,video game,99.99
+14,Fisher-Price,crayons,2.00
+15,Fisher-Price,crayons,99.99
+16,Nintendo,video game,99.99
+17,Nintendo,house,19.99
+18,Lego,video game,19.99
+19,Nintendo,kitchen,99.99
+20,Nintendo,kitchen,99.99
+21,Lego,kitchen,14.50
+22,Nintendo,crayons,19.99
+23,Lego,house,2.00
+24,Fisher-Price,kitchen,2.00
+25,Crayola,video game,2.10
+26,Fisher-Price,crayons,19.99
+27,Nintendo,kitchen,19.99
+28,Nintendo,toy car,2.10
+29,Hasbro,video game,19.99
+30,Hasbro,house,19.99
+31,Fisher-Price,toy car,19.99
+32,Hasbro,crayons,19.99
+33,Lego,video game,19.99
+34,Hasbro,toy car,14.50
+35,Lego,toy car,2.00
+36,Nintendo,video game,2.00
+37,Nintendo,toy car,19.99
+38,Crayola,toy car,14.50
+39,Fisher-Price,house,2.10
+40,Crayola,toy car,14.50
+41,Fisher-Price,video game,99.99
+42,Hasbro,kitchen,14.50
+43,Lego,crayons,14.50
+44,Fisher-Price,video game,19.99
+45,Hasbro,kitchen,99.99
+46,Lego,house,2.10
+47,Nintendo,house,2.10
+48,Crayola,video game,19.99
+49,Crayola,video game,2.00
+50,Hasbro,crayons,14.50
+51,Lego,toy car,14.50
+52,Nintendo,toy car,2.00
+53,Hasbro,kitchen,14.50
+54,Lego,video game,99.99
+55,Fisher-Price,video game,14.50
+56,Fisher-Price,toy car,2.10
+57,Crayola,house,2.00
+58,Nintendo,toy car,2.10
+59,Crayola,crayons,14.50
+60,Hasbro,house,99.99
+61,Lego,house,2.10
+62,Fisher-Price,kitchen,2.10
+63,Hasbro,video game,2.00
+64,Crayola,video game,2.10
+65,Hasbro,video game,99.99
+66,Hasbro,video game,2.10
+67,Hasbro,kitchen,2.00
+68,Fisher-Price,kitchen,14.50
+69,Crayola,crayons,19.99
+70,Hasbro,toy car,99.99
+71,Fisher-Price,crayons,19.99
+72,Fisher-Price,toy car,14.50
+73,Nintendo,house,99.99
+74,Lego,house,19.99
+75,Fisher-Price,toy car,14.50
+76,Crayola,video game,2.10
+77,Crayola,kitchen,2.10
+78,Lego,house,99.99
+79,Nintendo,video game,99.99
+80,Hasbro,house,2.10
+81,Nintendo,toy car,99.99
+82,Crayola,video game,2.10
+83,Lego,house,14.50
+84,Fisher-Price,video game,19.99
+85,Nintendo,toy car,2.10
+86,Crayola,crayons,14.50
+87,Fisher-Price,kitchen,14.50
+88,Hasbro,kitchen,2.10
+89,Lego,house,2.10
+90,Hasbro,video game,2.00
+91,Hasbro,kitchen,2.00
+92,Fisher-Price,crayons,19.99
+93,Crayola,video game,99.99
+94,Lego,toy car,99.99
+95,Crayola,toy car,2.00
+96,Nintendo,toy car,14.50
+97,Lego,kitchen,14.50
+98,Nintendo,house,99.99
+99,Fisher-Price,house,2.10
+100,Nintendo,kitchen,99.99
+101,WalterToys,Sticky Notes,34.0
+102,WalterToys,Sticky Notes,34.0
+103,WalterToys,Sticky Notes,34.0
+104,WalterToys,Sticky Notes,34.0
+105,WalterToys,Sticky Notes,34.0
