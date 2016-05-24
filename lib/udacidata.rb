@@ -5,15 +5,10 @@ require 'csv'
 class Udacidata
   	# Your code goes here!
   	@@data_path = File.dirname(__FILE__) + "/../data/data.csv"
-  	def self.create(opts = {})
-  	# If the object's data is already in the database
-  	# create the object
-  	# return the object
 
-  	# If the object's data is not in the database
-  	# create the object
-  	# save the data in the database
-  	# return the object
+	create_finder_methods("brand","name")
+
+  	def self.create(opts = {})
   		add_product = self.new(opts)
   		CSV.open(@@data_path, "a+") do |csv|
     		csv << [add_product.id,add_product.brand,add_product.name,add_product.price]
@@ -66,4 +61,35 @@ class Udacidata
 
 		return save_product
 	end
+
+	def self.where(opts={})
+		brand = opts[:brand]
+		name = opts[:name]
+		new_products = all.select do |product|
+			product.name == name || product.brand == brand
+		end
+	end
+
+	def update(opts={})
+		self.brand = opts[:brand]
+		self.name = opts[:name]
+		self.price = opts[:price]
+
+		all_data = CSV.table(@@data_path, headers:true)
+      	all_data.each do |product|
+        	if product[:id] == self.id
+        		product[:price] = opts[:price]
+        		product[:name] = opts[:name]
+        		product[:brand] = opts[:brand]
+        	end
+      	end
+
+    	File.open(@@data_path, "w") do |f|
+        	f.write(all_data.to_csv)
+    	end
+
+    	self
+
+	end
+
 end
