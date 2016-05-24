@@ -43,13 +43,23 @@ class Udacidata
    	end
 
    	def self.find(n)
-   		all.each do |product|
+   		
+      if n > all.count
+        raise ProductNotFoundError, "Product was not found"
+      end
+
+      all.each do |product|
    			return product if product.id == n
    		end
    	end
 
 	def self.destroy(n)
-   		save_product = find(n)
+   		
+      if n > all.count
+        raise ProductNotFoundError, "Product was not found"
+      end
+
+      save_product = find(n)
    		all_data = CSV.table(@@data_path, headers:true)
       	all_data.delete_if do |product|
         	product[:id] == n

@@ -9,15 +9,25 @@ module Analyzable
 	end
 
 	def print_report(products)
-		"a"
+		"Average Price: #{average_price(products)}\n" +
+		count_by_brand(products).to_s+"\n" +
+		count_by_name(products).to_s
 	end
 
 	def count_by_brand(products)
-		{ "FindMyBrand" => 1 }
+		counts = Hash.new(0)
+		products.each do |product|
+			counts[product.brand] += 1
+		end
+		counts
 	end	
 
 	def count_by_name(products)
-		{ "FindMyName" => 1 }
+		counts = Hash.new(0)
+		products.each do |product|
+			counts[product.name] += 1
+		end
+		counts
 	end
 
 end
