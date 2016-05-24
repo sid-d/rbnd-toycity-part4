@@ -81,25 +81,23 @@ class Udacidata
 	end
 
 	def update(opts={})
-		self.brand = opts[:brand]
-		self.name = opts[:name]
-		self.price = opts[:price]
-
+    self.brand = opts[:brand]
+    self.name = opts[:name]
+    self.price = opts[:price]
+    
 		all_data = CSV.table(@@data_path, headers:true)
-      	all_data.each do |product|
-        	if product[:id] == self.id
-        		product[:price] = opts[:price]
-        		product[:name] = opts[:name]
-        		product[:brand] = opts[:brand]
-        	end
-      	end
+      all_data.each do |product|
+        if product[:id] == self.id
+          product[:price] = opts[:price] if product[:price]
+        	product[:name] = opts[:name] if product[:name]
+        	product[:brand] = opts[:brand] if product[:brand]
+        end
+      end
+    File.open(@@data_path, "w") do |f|
+      f.write(all_data.to_csv)
+    end
 
-    	File.open(@@data_path, "w") do |f|
-        	f.write(all_data.to_csv)
-    	end
-
-    	self
-
+    self
 	end
 
 end

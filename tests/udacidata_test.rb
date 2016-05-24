@@ -160,6 +160,7 @@ class TestUdacidata < MiniTest::Test
     assert_equal(database_before.size, database_after.size)
   end
 
+
   # The "teardown" method always runs after the tests are done
   # "teardown" will delete the test database when tests are done
   def teardown
