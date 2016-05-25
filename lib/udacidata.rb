@@ -43,27 +43,28 @@ class Udacidata
    	end
 
    	def self.find(n)
-   		
-      if n > all.count
-        raise ProductNotFoundError, "Product was not found"
+   		prod=nil
+      all.each do |product|
+        if product.id == n
+          prod = product
+        end 
       end
 
-      all.each do |product|
-   			return product if product.id == n
-   		end
+      if prod.nil?
+        raise ProductNotFoundError, "Product was not found"
+      end
+      prod
    	end
 
 	def self.destroy(n)
-   		
-      if n > all.count
-        raise ProductNotFoundError, "Product was not found"
-      end
-
       save_product = find(n)
-   		all_data = CSV.table(@@data_path, headers:true)
+
+      if find(n)
+        all_data = CSV.table(@@data_path, headers:true)
       	all_data.delete_if do |product|
         	product[:id] == n
       	end
+      end
 
     	File.open(@@data_path, "w") do |f|
         	f.write(all_data.to_csv)
@@ -81,16 +82,16 @@ class Udacidata
 	end
 
 	def update(opts={})
-    self.brand = opts[:brand]
-    self.name = opts[:name]
-    self.price = opts[:price]
+    self.brand = opts[:brand] if opts[:brand]
+    self.name = opts[:name] if opts[:name]
+    self.price = opts[:price] if opts[:price]
     
 		all_data = CSV.table(@@data_path, headers:true)
       all_data.each do |product|
         if product[:id] == self.id
-          product[:price] = opts[:price] if product[:price]
-        	product[:name] = opts[:name] if product[:name]
-        	product[:brand] = opts[:brand] if product[:brand]
+          product[:price] = opts[:price] if opts[:price]
+        	product[:name] = opts[:name] if opts[:name]
+        	product[:brand] = opts[:brand] if opts[:brand]
         end
       end
     File.open(@@data_path, "w") do |f|

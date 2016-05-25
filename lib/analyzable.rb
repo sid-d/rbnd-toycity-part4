@@ -9,9 +9,16 @@ module Analyzable
 	end
 
 	def print_report(products)
-		"Average Price: #{average_price(products)}\n" +
-		count_by_brand(products).to_s+"\n" +
-		count_by_name(products).to_s
+		puts "Inventory by brand:"
+		count_by_brand(products).each do |product,num|
+			puts "  -#{product}: #{num}"
+		end
+		puts
+		puts "Inventory by name:"
+		count_by_name(products).each do |product,num|
+			puts "  -#{product}: #{num}"
+		end
+		puts
 	end
 
 	def count_by_brand(products)

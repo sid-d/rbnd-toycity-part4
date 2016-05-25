@@ -67,7 +67,7 @@ puts
 puts "-------------------------"
 puts "DESTROY PRODUCT WITH ID 2"
 puts "-------------------------"
-print Product.destroy(2)
+print #Product.destroy(2)
 #
 puts
 puts "-------------------------------"
@@ -85,7 +85,7 @@ puts
 puts "-----------------"
 puts "DESTROY PRODUCT 3"
 puts "-----------------"
-print Product.destroy(3)
+print #Product.destroy(3)
 #
 puts
 puts "-------------------------------"
