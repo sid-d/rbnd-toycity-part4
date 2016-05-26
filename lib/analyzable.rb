@@ -9,16 +9,15 @@ module Analyzable
 	end
 
 	def print_report(products)
-		puts "Inventory by brand:"
+		words = "Inventory by brand: \n"
 		count_by_brand(products).each do |product,num|
-			puts "  -#{product}: #{num}"
+			words += "  -#{product}: #{num} \n"
 		end
-		puts
-		puts "Inventory by name:"
+		words += "Inventory by name: \n"
 		count_by_name(products).each do |product,num|
-			puts "  -#{product}: #{num}"
+			words += "  -#{product}: #{num} \n"
 		end
-		puts
+		words
 	end
 
 	def count_by_brand(products)
